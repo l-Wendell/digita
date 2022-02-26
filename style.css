@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+}
+
+
+#container-h1{
+    margin: 0 auto;
+    position: relative;
+    width: 40rem;
+    margin-top: 30px;
+    border: 1px solid red;
+    border-radius: 20px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Sarala', sans-serif;
+    font-size: 3rem;
+}
+
+#input-btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#input{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    height: 30px;
+    width: 200px;
+    outline: none;
+}
+
+#input-btn button{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    height: 30px;
+    width: 100px;
+}
+
+.card{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 50px;
+    background-color: red;
+    height: 250px;
+
+}
+
+.card h2{
+    background-color: aqua;
+    text-align: center;
+    font-family: 'Sarala', sans-serif;
+}
+
+.card p, span{
+    width: 250px;
+    background-color: wheat;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
