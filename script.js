@@ -7,6 +7,16 @@ const spanErrado = document.getElementById('span-errado')
 const h1 = document.getElementById('h1')
 const btnRecarregar = document.getElementById('recarregar')
 
+const timeBtn = document.getElementById('time-btn')
+const paragrafoTime = timeBtn.querySelector('p')
+
+const iniciar = document.getElementById('iniciar')
+const econderCard = document.getElementById('esconder')
+
+const card = document.querySelector('.card')
+
+const numerosCertos = []
+const numerosErrados = []
 
 const arr = [
     'Lucas', 'Televisão', 
@@ -39,16 +49,13 @@ const arr = [
 function sorteio(){
     const sorteioVar = Math.floor(Math.random() * arr.length)
     h1.textContent = arr[sorteioVar]
+    iniciar.style.display = 'block'
 }
 sorteio()
 
-
-const numerosCertos = []
-const numerosErrados = []
-
 function validWord(){
     const valorDoInput = input.value
-    
+
     if(valorDoInput === h1.textContent){
         
         numerosCertos.push(1)
@@ -61,7 +68,6 @@ function validWord(){
         spanErrado.textContent = numerosErrados.length
         input.value=''
     }
-
     input.focus()
     sorteio()
 }
@@ -72,7 +78,24 @@ function enivarTecla(e){
     }
 }
 
+function hide(paragrafo){
+
+    if(paragrafo.classList.contains('hide')){
+        paragrafo.classList.remove('hide')
+    } else {
+        paragrafo.classList.add('hide')
+    }
+} 
+
+function init(){
+    iniciar.style.display = 'none'
+    input.value=''
+    input.focus()
+}
+
 btnRecarregar.addEventListener('click', sorteio)
 btn.addEventListener('click', validWord)
-
 input.addEventListener('keydown', enivarTecla)
+timeBtn.addEventListener('click', () => hide(paragrafoTime))
+iniciar.addEventListener('click', init)
+econderCard.addEventListener('click', () => hide(card))
