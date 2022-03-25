@@ -11,21 +11,26 @@ const timeBtn = document.getElementById('time-btn')
 const paragrafoTime = timeBtn.querySelector('p')
 
 const iniciar = document.getElementById('iniciar')
-const econderCard = document.getElementById('esconder')
+const esconder = document.getElementById('esconder')
 
 const card = document.querySelector('.card')
+const texto = document.getElementById('texto')
 
-const numerosCertos = []
-const numerosErrados = []
+let num = 0
+let certo = 0
+let errado = 0
+
+
+let n = 5
 
 const arr = [
-    'Lucas', 'Televisão', 
-    'Tomada', 'Histórico', 
+    'Lucas', 'Televisão',
+    'Tomada', 'Histórico',
     'Toalha', 'Mouse',
-    'Mousepad', 'Presidente', 
+    'Mousepad', 'Presidente',
     'senhores', 'estrófe',
-    'cor', 'Mateus', 
-    'monitor', 'Thalyta', 
+    'cor', 'Mateus',
+    'monitor', 'Thalyta',
     'Artur', 'torcida', 'dinheiro',
     'acabar', 'celular', 'Espanha',
     'Estados Unidos', 'programação',
@@ -33,69 +38,127 @@ const arr = [
     'Fernando', 'há', 'à', 'Twitter', 'YouTube',
     'plataforma', 'custo', 'contador',
     'estranho', 'normal', 'Brasília', 'parede', 'Brasil', 'internet',
-    'JavaScript','descoberta', 'Whatsapp', 'Visual Studio Code', 'garrafa',
-    'barra', 'academia', 'linha', 'coluna', 'fone', 'Anitta', 'Drake', 
-    'coberta','televisor', 'aspas', 'luz', 'anos', 
-    'Flamengo', 'torcida', 'Formiga', 'DaNiLo','perder', 'ganhar', 'ouro', 
+    'JavaScript', 'descoberta', 'Whatsapp', 'Visual Studio Code', 'garrafa',
+    'barra', 'academia', 'linha', 'coluna', 'fone', 'Anitta', 'Drake',
+    'coberta', 'televisor', 'aspas', 'luz', 'anos',
+    'Flamengo', 'torcida', 'Formiga', 'DaNiLo', 'perder', 'ganhar', 'ouro',
     'perigo', 'cabeça', 'encarar', 'entendo', 'seleção',
-    'mês', 'fita', 'editor', 'confiança', 'manter', 
-    'atividade', 'ponto', 'porrada','expectativa', 'realidade', 'reais', 
+    'mês', 'fita', 'editor', 'confiança', 'manter',
+    'atividade', 'ponto', 'porrada', 'expectativa', 'realidade', 'reais',
     'galera', 'época', 'sério', 'isso', 'convidado',
-    'show', 'vestiu', 'artista', 'sabia', 'culpado', 
+    'show', 'vestiu', 'artista', 'sabia', 'culpado',
     'será', 'dia', 'hoje', 'oposto', 'porque',
     'por quê', 'porquê', 'por que', 'barulho', 'cara'
 ]
 
-function sorteio(){
+function attCard(numCerto, numErrado) {
+    spanCerto.textContent = numCerto
+    spanErrado.textContent = numErrado
+}
+
+function intervalo() {
+    const interval = setInterval(function () {
+        paragrafoTime.textContent = n
+
+        if (paragrafoTime != '1:00') {
+            paragrafoTime.textContent = `0:${n--}`
+        }
+
+        if (paragrafoTime.textContent == '0:0') {
+
+            paragrafoTime.textContent = '1:00'
+            texto.value = ''
+            num = 0
+
+            iniciar.style.display = 'block'
+            clearInterval(interval)
+        }
+
+        if (n == -1) {
+            n = 5
+            clearInterval(interval)
+        }
+    }, 1000)
+}
+
+function sorteio() {
+
     const sorteioVar = Math.floor(Math.random() * arr.length)
     h1.textContent = arr[sorteioVar]
     iniciar.style.display = 'block'
+    
 }
 sorteio()
 
-function validWord(){
-    const valorDoInput = input.value
 
-    if(valorDoInput === h1.textContent){
-        
-        numerosCertos.push(1)
-        spanCerto.textContent = numerosCertos.length
-        input.value=''
-        
-    } else{
-        
-        numerosErrados.push(1)
-        spanErrado.textContent = numerosErrados.length
-        input.value=''
+function validWord() {
+
+    if (input.value === h1.textContent) {
+
+        certo++
+        attCard(certo, errado)
+        input.value = ''
+
+    } else {
+
+        errado++
+        attCard(certo, errado)
+        input.value = ''
+
     }
+    
     input.focus()
     sorteio()
 }
 
-function enivarTecla(e){
-    if(e.keyCode === 13){
+function enivarTecla(e) {
+    if (e.keyCode === 13) {
         validWord()
     }
 }
 
-function hide(paragrafo){
+function hide(item) {
+    const PclassList = item.classList
 
-    if(paragrafo.classList.contains('hide')){
-        paragrafo.classList.remove('hide')
+    if (PclassList.contains('hide')) {
+        PclassList.remove('hide')
     } else {
-        paragrafo.classList.add('hide')
+        PclassList.add('hide')
     }
-} 
 
-function init(){
+}
+
+function init() {
+
+    certo = 0
+    errado = 0
+    attCard(certo, errado)
+
     iniciar.style.display = 'none'
-    input.value=''
-    input.focus()
+    input.value = ''
+
+    texto.focus()
+    intervalo()
 }
 
 btnRecarregar.addEventListener('click', sorteio)
 btn.addEventListener('click', validWord)
+
 input.addEventListener('keydown', enivarTecla)
 timeBtn.addEventListener('click', () => hide(paragrafoTime))
+
 iniciar.addEventListener('click', init)
-econderCard.addEventListener('click', () => hide(card))
+esconder.addEventListener('click', () => hide(card))
+
+texto.addEventListener('keypress', function (event) {
+    num++
+
+    if (event.keyCode === 32) {
+        validWord()
+        texto.value = ''
+    }
+
+    if (num === 1) {
+        init()
+    }
+})
