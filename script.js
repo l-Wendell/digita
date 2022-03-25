@@ -1,16 +1,16 @@
 const input = document.getElementById('input')
-const btn = document.getElementById('btn')
 
 const spanCerto = document.getElementById('span-certo')
 const spanErrado = document.getElementById('span-errado')
 
 const h1 = document.getElementById('h1')
+const containerH1 = document.getElementById('container-h1')
 const btnRecarregar = document.getElementById('recarregar')
 
 const timeBtn = document.getElementById('time-btn')
 const paragrafoTime = timeBtn.querySelector('p')
 
-const iniciar = document.getElementById('iniciar')
+// const iniciar = document.getElementById('iniciar')
 const esconder = document.getElementById('esconder')
 
 const card = document.querySelector('.card')
@@ -67,14 +67,16 @@ function intervalo() {
         if (paragrafoTime.textContent == '0:0') {
 
             paragrafoTime.textContent = '1:00'
-            texto.value = ''
+            input.value = ''
             num = 0
 
-            iniciar.style.display = 'block'
+            // iniciar.style.display = 'block'
             clearInterval(interval)
         }
 
         if (n == -1) {
+            hide(containerH1)
+            input.blur()
             n = 5
             clearInterval(interval)
         }
@@ -85,14 +87,17 @@ function sorteio() {
 
     const sorteioVar = Math.floor(Math.random() * arr.length)
     h1.textContent = arr[sorteioVar]
-    iniciar.style.display = 'block'
+    // iniciar.style.display = 'block'
     
 }
 sorteio()
 
 
 function validWord() {
-
+    console.log(input.value)
+    // let valorDOInput = input.value
+    // console.log(valorDOInput.trim())
+    input.value.trim()
     if (input.value === h1.textContent) {
 
         certo++
@@ -106,24 +111,32 @@ function validWord() {
         input.value = ''
 
     }
-    
+
     input.focus()
     sorteio()
+    
 }
 
 function enivarTecla(e) {
-    if (e.keyCode === 13) {
+    num++
+
+    if (num === 1) {
+        init()
+    }
+
+    if (e.keyCode === 32) {
+        // input.value = ''
         validWord()
     }
 }
 
 function hide(item) {
-    const PclassList = item.classList
+    const itemClassList = item.classList
 
-    if (PclassList.contains('hide')) {
-        PclassList.remove('hide')
+    if (itemClassList.contains('hide')) {
+        itemClassList.remove('hide')
     } else {
-        PclassList.add('hide')
+        itemClassList.add('hide')
     }
 
 }
@@ -134,31 +147,32 @@ function init() {
     errado = 0
     attCard(certo, errado)
 
-    iniciar.style.display = 'none'
     input.value = ''
 
-    texto.focus()
+    input.focus()
     intervalo()
 }
 
-btnRecarregar.addEventListener('click', sorteio)
-btn.addEventListener('click', validWord)
+btnRecarregar.addEventListener('click', () => {
+    hide(containerH1)
+    sorteio()
+   
+})
 
-input.addEventListener('keydown', enivarTecla)
+// btn.addEventListener('click', validWord)
 timeBtn.addEventListener('click', () => hide(paragrafoTime))
 
-iniciar.addEventListener('click', init)
+input.addEventListener('keypress', enivarTecla)
 esconder.addEventListener('click', () => hide(card))
 
-texto.addEventListener('keypress', function (event) {
-    num++
+// input.addEventListener('keypress', function (event) {
+//     num++
 
-    if (event.keyCode === 32) {
-        validWord()
-        texto.value = ''
-    }
+//     if (event.keyCode === 32) {
+//         validWord()
+//     }
 
-    if (num === 1) {
-        init()
-    }
-})
+//     if (num === 1) {
+//         init()
+//     }
+// })
