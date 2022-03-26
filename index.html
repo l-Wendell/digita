@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Digita</title>
 </head>
 
 <body>
 
     <div id="container-h1">
-        <h1 id="h1">Lucas</h1>
+        <h1 id="h1"></h1>
     </div>
     
     <div id="input-btn">
-
         <input placeholder="Digite aqui..." type="text" id="input">
-        <!-- <button id="btn">Verificar</button> -->
-        <button id="recarregar">Recarregar</button>
+        <button id="recarregar"><i class="fa fa-refresh" aria-hidden="true"></i></button>
         <button id="time-btn"><p class="" id="paragrafo-time">1:00</p></button>
-        <!-- <button id="iniciar">Iniciar</button> -->
-        <button id="esconder">esconder card</button>
     </div>
 
     
-    <div class="card hide">
+    <div class="card">
         <h2>Seu desempenho:</h2>
         <p>Palavras certas: <span id="span-certo">0 </span></p>
         <p>Palavras erradas: <span id="span-errado">0</span></p>

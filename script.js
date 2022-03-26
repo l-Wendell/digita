@@ -5,23 +5,18 @@ const spanErrado = document.getElementById('span-errado')
 
 const h1 = document.getElementById('h1')
 const containerH1 = document.getElementById('container-h1')
+
 const btnRecarregar = document.getElementById('recarregar')
-
 const timeBtn = document.getElementById('time-btn')
+
 const paragrafoTime = timeBtn.querySelector('p')
-
-// const iniciar = document.getElementById('iniciar')
-const esconder = document.getElementById('esconder')
-
 const card = document.querySelector('.card')
-const texto = document.getElementById('texto')
 
-let num = 0
-let certo = 0
-let errado = 0
+let inputLength = 0
+let numberSpanCerto = 0
 
-
-let n = 5
+let numberSpanErrado = 0
+let watch = 15
 
 const arr = [
     'Lucas', 'Televisão',
@@ -56,78 +51,24 @@ function attCard(numCerto, numErrado) {
     spanErrado.textContent = numErrado
 }
 
-function intervalo() {
-    const interval = setInterval(function () {
-        paragrafoTime.textContent = n
-
-        if (paragrafoTime != '1:00') {
-            paragrafoTime.textContent = `0:${n--}`
-        }
-
-        if (paragrafoTime.textContent == '0:0') {
-
-            paragrafoTime.textContent = '1:00'
-            input.value = ''
-            num = 0
-
-            // iniciar.style.display = 'block'
-            clearInterval(interval)
-        }
-
-        if (n == -1) {
-            hide(containerH1)
-            input.blur()
-            n = 5
-            clearInterval(interval)
-        }
-    }, 1000)
-}
-
 function sorteio() {
-
     const sorteioVar = Math.floor(Math.random() * arr.length)
     h1.textContent = arr[sorteioVar]
-    // iniciar.style.display = 'block'
-    
 }
 sorteio()
 
-
 function validWord() {
-    console.log(input.value)
-    // let valorDOInput = input.value
-    // console.log(valorDOInput.trim())
-    input.value.trim()
-    if (input.value === h1.textContent) {
 
-        certo++
-        attCard(certo, errado)
+    if (input.value.trim() === h1.textContent) {
+        numberSpanCerto++
         input.value = ''
-
     } else {
-
-        errado++
-        attCard(certo, errado)
+        numberSpanErrado++
         input.value = ''
-
     }
-
     input.focus()
     sorteio()
-    
-}
 
-function enivarTecla(e) {
-    num++
-
-    if (num === 1) {
-        init()
-    }
-
-    if (e.keyCode === 32) {
-        // input.value = ''
-        validWord()
-    }
 }
 
 function hide(item) {
@@ -141,38 +82,59 @@ function hide(item) {
 
 }
 
+function intervalo() {
+    const interval = setInterval(function () {
+        paragrafoTime.textContent = watch
+
+        if (paragrafoTime != '1:00') {
+            paragrafoTime.textContent = `0:${watch--}`
+        }
+
+        if (paragrafoTime.textContent == '0:0') {
+
+            inputLength = 0
+            paragrafoTime.textContent = '1:00'
+            input.value = ''
+
+            clearInterval(interval)
+        }
+
+        if (watch == -1) {
+            watch = 15
+
+            attCard(numberSpanCerto, numberSpanErrado)
+            hide(containerH1)
+            input.blur()
+
+            clearInterval(interval)
+        }
+    }, 1000)
+}
+
 function init() {
 
-    certo = 0
-    errado = 0
-    attCard(certo, errado)
-
+    numberSpanCerto = 0
+    numberSpanErrado = 0
     input.value = ''
 
     input.focus()
     intervalo()
 }
 
+function enivarTecla(e) {
+    inputLength++
+    if (inputLength === 1) {
+        init()
+    }
+    if (e.keyCode === 32) {
+        validWord()
+    }
+}
+
 btnRecarregar.addEventListener('click', () => {
     hide(containerH1)
     sorteio()
-   
 })
 
-// btn.addEventListener('click', validWord)
 timeBtn.addEventListener('click', () => hide(paragrafoTime))
-
 input.addEventListener('keypress', enivarTecla)
-esconder.addEventListener('click', () => hide(card))
-
-// input.addEventListener('keypress', function (event) {
-//     num++
-
-//     if (event.keyCode === 32) {
-//         validWord()
-//     }
-
-//     if (num === 1) {
-//         init()
-//     }
-// })

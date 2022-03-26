@@ -1,8 +1,9 @@
-Galera, tenho um input e um cronometro e
-quero que quando eu começar a digitar nesse
-input o cronometro seja disparado. Como faço
-isso?
+Fazer contador de Palavras Por Minuto
 
-resolver problema do cronometro
+Melhorar HTML
 
-mudar de input para textarea
+Editar CSS
+
+# Projeto Final:
+#
+![img](./img/Digita.png)
