@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,700;1,400&family=Roboto:wght@400;500&display=swap');
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -8,21 +7,26 @@
 html, body{
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(25.2deg, #DB00FF 0%, #5F006F 162.34%);
 }
 
 
 #container-h1{
     margin: 0 auto;
     position: relative;
-    width: 40rem;
+    width: 350px;
+    height: 70px;
     margin-top: 30px;
-    border: 1px solid red;
-    border-radius: 20px;
+    background-color: #fff;
+    color: #5F006F;
+    border-radius: 3px;
 }
 
 h1{
+    padding-top: 5px;
     text-align: center;
-    font-family: 'Sarala', sans-serif;
+    font-family: 'Kufam', sans-serif;
+    font-weight: 700;
     font-size: 3rem;
 }
 
@@ -33,45 +37,107 @@ h1{
 }
 
 #input{
-    font-family: 'Sarala', sans-serif;
-    font-weight: 400;
-    height: 30px;
-    width: 200px;
+    border-radius: 2px;
+    padding: 7px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    height: 40px;
+    width: 240px;
     outline: none;
 }
 
 #input-btn button{
-    font-family: 'Sarala', sans-serif;
+    border-radius: 2px;
+    font-family: 'Kufam', sans-serif;
+    font-size: 14px;
     font-weight: 400;
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+    border: none;
+    background-color: #fff;
+    color: #5F006F;
+}
+
+#input-btn button i{
+    font-size: 17px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
 }
 
 .card{
-    display: block;
-    position: relative;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
     width: 300px;
     margin-top: 50px;
-    background-color: red;
+    background-color: #fff;
     height: 250px;
 
 }
 
-.card h2{
-    background-color: aqua;
+.ppm{
     text-align: center;
-    font-family: 'Sarala', sans-serif;
+    height: 24%;
+    border-bottom: 1px solid #5F006F;
 }
 
-.card p, span{
+.ppm h3 {
+    color: #5F006F;
+    margin-top: 16px;
+    font-family: 'Kufam', sans-serif;
+    font-size: 25px;
+}
+
+.h2-container{
+    border-radius: 4px 4px 0 0;
+    background-color: #5F006F;
+    font-family: 'Kufam', sans-serif;
+}
+
+.h2-container h2{
+    font-size: 22px;
+    color: #fff;
+    margin-left: 8px;
+}
+
+.textos p, span{
+    color: #5F006F;
+    margin-top: 20px;
+    padding-bottom: 15px;
     width: 250px;
-    background-color: wheat;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Sarala', sans-serif;
+    margin-left: 8px;
+    font-family: 'Kufam', sans-serif;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    margin-top: 50px;
+    background-color: #fff;
+    height: 152px;
+    width: 100%;
+}
+
+.icons i{
+    padding: 10px;   
+    font-size: 40px;
+    transition: .9s;
+}
+
+.fa:hover{
+    box-shadow: 0px 0px 22px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
 }
 
 .hide{

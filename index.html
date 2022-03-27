@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Digita</title>
 </head>
@@ -15,20 +15,47 @@
     <div id="container-h1">
         <h1 id="h1"></h1>
     </div>
-    
+
     <div id="input-btn">
         <input placeholder="Digite aqui..." type="text" id="input">
         <button id="recarregar"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-        <button id="time-btn"><p class="" id="paragrafo-time">1:00</p></button>
+        <button id="time-btn">
+            <p class="" id="paragrafo-time">1:00</p>
+        </button>
     </div>
 
-    
-    <div class="card">
-        <h2>Seu desempenho:</h2>
-        <p>Palavras certas: <span id="span-certo">0 </span></p>
-        <p>Palavras erradas: <span id="span-errado">0</span></p>
+    <div class="card-container">
+        <div class="card">
+            <div class="h2-container">
+                <h2>Resultado:</h2>
+            </div>
+
+            <div class="ppm">
+                <h3 id="h3">0 PPM</h3>
+            </div>
+
+            <div class="textos">
+                <div class="paragrafo1">
+
+                    <p>Palavras certas: <span id="span-certo">0 </span></p>
+
+                </div>
+                <div class="paragrafo2">
+
+                    <p>Palavras erradas: <span id="span-errado">0</span></p>
+
+                </div>
+            </div>
+        </div>
     </div>
 
+    <footer class="footer navbar-fixed-bottom">
+        <div class="icons">
+            <a href="https://www.instagram.com/lucas_whll/" target="_blank"><i class="fa fa-instagram ins" aria-hidden="true"></i></a>
+            <a href="https://github.com/l-Wendell" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/lucas-wendell-0271a022a/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 

@@ -12,11 +12,13 @@ const timeBtn = document.getElementById('time-btn')
 const paragrafoTime = timeBtn.querySelector('p')
 const card = document.querySelector('.card')
 
+const PPMH3 = document.getElementById('h3')
+
 let inputLength = 0
 let numberSpanCerto = 0
 
 let numberSpanErrado = 0
-let watch = 15
+let watch = 59
 
 const arr = [
     'Lucas', 'Televisão',
@@ -28,12 +30,12 @@ const arr = [
     'monitor', 'Thalyta',
     'Artur', 'torcida', 'dinheiro',
     'acabar', 'celular', 'Espanha',
-    'Estados Unidos', 'programação',
+    'programação',
     'mercado', 'funil', 'jogos', 'poupança',
     'Fernando', 'há', 'à', 'Twitter', 'YouTube',
     'plataforma', 'custo', 'contador',
     'estranho', 'normal', 'Brasília', 'parede', 'Brasil', 'internet',
-    'JavaScript', 'descoberta', 'Whatsapp', 'Visual Studio Code', 'garrafa',
+    'JavaScript', 'descoberta', 'Whatsapp', 'garrafa',
     'barra', 'academia', 'linha', 'coluna', 'fone', 'Anitta', 'Drake',
     'coberta', 'televisor', 'aspas', 'luz', 'anos',
     'Flamengo', 'torcida', 'Formiga', 'DaNiLo', 'perder', 'ganhar', 'ouro',
@@ -43,12 +45,15 @@ const arr = [
     'galera', 'época', 'sério', 'isso', 'convidado',
     'show', 'vestiu', 'artista', 'sabia', 'culpado',
     'será', 'dia', 'hoje', 'oposto', 'porque',
-    'por quê', 'porquê', 'por que', 'barulho', 'cara'
+    'porquê', 'barulho', 'cara'
 ]
 
 function attCard(numCerto, numErrado) {
     spanCerto.textContent = numCerto
     spanErrado.textContent = numErrado
+    
+    const calcPPM = numCerto - numErrado
+    PPMH3.textContent = `${calcPPM} PPM`
 }
 
 function sorteio() {
@@ -100,13 +105,15 @@ function intervalo() {
         }
 
         if (watch == -1) {
-            watch = 15
+            watch = 59
 
             attCard(numberSpanCerto, numberSpanErrado)
             hide(containerH1)
-            input.blur()
 
+            input.blur()
             clearInterval(interval)
+
+            
         }
     }, 1000)
 }
@@ -131,7 +138,15 @@ function enivarTecla(e) {
     }
 }
 
+
+
 btnRecarregar.addEventListener('click', () => {
+    const h1Class = containerH1.classList
+
+    if(h1Class.contains('hide')){
+        input.focus()
+    }
+
     hide(containerH1)
     sorteio()
 })
