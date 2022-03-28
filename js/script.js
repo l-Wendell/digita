@@ -38,15 +38,35 @@ const arr = [
     'JavaScript', 'descoberta', 'Whatsapp', 'garrafa',
     'barra', 'academia', 'linha', 'coluna', 'fone', 'Anitta', 'Drake',
     'coberta', 'televisor', 'aspas', 'luz', 'anos',
-    'Flamengo', 'torcida', 'Formiga', 'DaNiLo', 'perder', 'ganhar', 'ouro',
+    'Flamengo', 'torcida', 'Formiga', 'Danilo', 'perder', 'ganhar', 'ouro',
     'perigo', 'cabeça', 'encarar', 'entendo', 'seleção',
     'mês', 'fita', 'editor', 'confiança', 'manter',
     'atividade', 'ponto', 'porrada', 'expectativa', 'realidade', 'reais',
     'galera', 'época', 'sério', 'isso', 'convidado',
     'show', 'vestiu', 'artista', 'sabia', 'culpado',
     'será', 'dia', 'hoje', 'oposto', 'porque',
-    'porquê', 'barulho', 'cara'
+    'porquê', 'barulho', 'cara', 'porta', 'casa',
+    'isto', 'não', 'escola', 'idioma', 'pais', 'país',
+    'continente', 'mar', 'oceano', 'botão', 'Universidade',
+    'Faculdade', 'própio', 'Universo', 'Sol', 'Terra', 'galáxia',
+    'buraco', 'minhoca', 'jogos', 'veloz', 'aqui', 'temos',
+    'tema', 'redação', 'cama', 'quarto', 'variar', 'quarteto',
+    'dueto', 'maxima', 'sentir', 'seguir', 'junto', 'termo',
+    'as', 'ajuda', 'telha', 'console', 'estes', 'demasiado',
+    'um', 'dois', 'três', 'novessentos', 'vinte', 'Leonardo',
+    'descubra', 'foguete', 'Elon', 'Jeff', 'senhores',
+    'terno', 'github', 'céu', 'azul', 'rosa', 'ponto',
+    'Nike', 'Adidas', 'mato', 'grosso', 'vinda', 'idas',
+    'trabalho', 'portfólio', 'Lagosta', 'Tubarão', 'seres',
+    'pé', 'mosquito', 'vida', 'fio', 'coberta', 'calor',
+    'frio', 'calculista', 'homem', 'mulher', 'criança',
+    'deuses', 'maiores', 'ecrever', 'digitar', 'notificação',
+    'chão', 'geladeira', 'móvel', 'carro', 'armario', 'Laisa',
+    'Gilberto', 'apelido', 'democracia', 'quadro', 'auditório',
+    'descoberta', 'uniforme', 'tapete', 'cinto', 'cinco', 'eletricidade'
 ]
+
+console.log(arr.length)
 
 function attCard(numCerto, numErrado) {
     spanCerto.textContent = numCerto
@@ -137,8 +157,6 @@ function enivarTecla(e) {
         validWord()
     }
 }
-
-
 
 btnRecarregar.addEventListener('click', () => {
     const h1Class = containerH1.classList

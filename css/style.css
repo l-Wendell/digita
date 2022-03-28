@@ -10,15 +10,18 @@ html, body{
     background: linear-gradient(25.2deg, #DB00FF 0%, #5F006F 162.34%);
 }
 
+a{
+    color: #5F006F;
+}
 
 #container-h1{
     margin: 0 auto;
     position: relative;
     width: 350px;
     height: 70px;
-    margin-top: 30px;
-    background-color: #fff;
-    color: #5F006F;
+    margin-top: 15px;
+    background-color: #41004B;
+    color: #BA00D9;
     border-radius: 3px;
 }
 
@@ -31,7 +34,7 @@ h1{
 }
 
 #input-btn{
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }
@@ -45,6 +48,12 @@ h1{
     height: 40px;
     width: 240px;
     outline: none;
+    background-color: #41004B;
+    color: #BA00D9;
+}
+
+#input::placeholder{
+    color: #BA00D9;
 }
 
 #input-btn button{
@@ -56,8 +65,8 @@ h1{
     width: 40px;
     margin-left: 15px;
     border: none;
-    background-color: #fff;
-    color: #5F006F;
+    background-color: #41004B;
+    color: #BA00D9;
 }
 
 #input-btn button i{
@@ -70,24 +79,24 @@ h1{
 }
 
 .card{
+    background-color: #41004B;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
     width: 300px;
-    margin-top: 50px;
-    background-color: #fff;
+    margin-top: 30px;
     height: 250px;
-
+    transition: .9s;
 }
 
 .ppm{
     text-align: center;
     height: 24%;
-    border-bottom: 1px solid #5F006F;
+    border-bottom: 1px solid #BA00D9;
 }
 
 .ppm h3 {
-    color: #5F006F;
+    color: #BA00D9;
     margin-top: 16px;
     font-family: 'Kufam', sans-serif;
     font-size: 25px;
@@ -95,18 +104,18 @@ h1{
 
 .h2-container{
     border-radius: 4px 4px 0 0;
-    background-color: #5F006F;
+    background-color: #BA00D9;
     font-family: 'Kufam', sans-serif;
 }
 
 .h2-container h2{
     font-size: 22px;
-    color: #fff;
+    color: #41004B;
     margin-left: 8px;
 }
 
 .textos p, span{
-    color: #5F006F;
+    color: #BA00D9;
     margin-top: 20px;
     padding-bottom: 15px;
     width: 250px;
@@ -124,12 +133,14 @@ footer{
     bottom: 0;
     border-radius: 10px 10px 0 0;
     margin-top: 50px;
-    background-color: #fff;
-    height: 152px;
+    background-color: #41004B;
+    height: 120px;
+    /* height: 152px; */
     width: 100%;
 }
 
 .icons i{
+    color: #BA00D9;
     padding: 10px;   
     font-size: 40px;
     transition: .9s;
@@ -140,6 +151,10 @@ footer{
     border-radius: 7px;
 }
 
+.digitaContainer h1{
+    color: #41004B;
+}
+
 .hide{
     display: none;
 }
@@ -147,3 +162,21 @@ footer{
 .show{
     display: block;
 }
+
+  .digitaContainer h1:after{
+   content: '';
+    display: inline-block;
+    background-color: #41004B;
+    margin-left: 2px;
+    height: 36px;
+    width: 4px;
+    animation: cursor 0.4s infinite;
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes cursor {
+    0% { opacity: 1; }
+      49% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+  }
