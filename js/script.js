@@ -27,7 +27,7 @@ const arr = [
     'Mousepad', 'Presidente',
     'senhores', 'estrófe',
     'cor', 'Mateus',
-    'monitor', 'Thalyta',
+    'monitor', 'prisão',
     'Artur', 'torcida', 'dinheiro',
     'acabar', 'celular', 'Espanha',
     'programação',
@@ -65,8 +65,6 @@ const arr = [
     'Gilberto', 'apelido', 'democracia', 'quadro', 'auditório',
     'descoberta', 'uniforme', 'tapete', 'cinto', 'cinco', 'eletricidade'
 ]
-
-console.log(arr.length)
 
 function attCard(numCerto, numErrado) {
     spanCerto.textContent = numCerto
