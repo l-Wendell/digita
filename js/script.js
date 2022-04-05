@@ -51,7 +51,7 @@ const arr = [
     'Faculdade', 'própio', 'Universo', 'Sol', 'Terra', 'galáxia',
     'buraco', 'minhoca', 'jogos', 'veloz', 'aqui', 'temos',
     'tema', 'redação', 'cama', 'quarto', 'variar', 'quarteto',
-    'dueto', 'maxima', 'sentir', 'seguir', 'junto', 'termo',
+    'dueto', 'máxima', 'sentir', 'seguir', 'junto', 'termo',
     'as', 'ajuda', 'telha', 'console', 'estes', 'demasiado',
     'um', 'dois', 'três', 'novessentos', 'vinte', 'Leonardo',
     'descubra', 'foguete', 'Elon', 'Jeff', 'senhores',
@@ -60,7 +60,7 @@ const arr = [
     'trabalho', 'portfólio', 'Lagosta', 'Tubarão', 'seres',
     'pé', 'mosquito', 'vida', 'fio', 'coberta', 'calor',
     'frio', 'calculista', 'homem', 'mulher', 'criança',
-    'deuses', 'maiores', 'ecrever', 'digitar', 'notificação',
+    'deuses', 'maiores', 'escrever', 'digitar', 'notificação',
     'chão', 'geladeira', 'móvel', 'carro', 'armario', 'Laisa',
     'Gilberto', 'apelido', 'democracia', 'quadro', 'auditório',
     'descoberta', 'uniforme', 'tapete', 'cinto', 'cinco', 'eletricidade'
